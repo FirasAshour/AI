@@ -2,7 +2,7 @@ import os
 import torch
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-DATA_DIR   = os.environ.get("CAR_DATA_DIR", "data/cars_dataset")
+DATA_DIR = r"C:\Projects\ML\Supervised\CNNs\Cars\data\cars_dataset"
 OUTPUT_DIR = "outputs"
 
 # ── Data split ratios ──────────────────────────────────────────────────────────

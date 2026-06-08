@@ -1,0 +1,3 @@
+class_name,class_idx,num_images,pct_of_total
+train,1,3352,80.48
+test,0,813,19.52
