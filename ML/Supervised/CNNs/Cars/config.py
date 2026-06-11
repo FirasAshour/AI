@@ -36,4 +36,6 @@ IMAGENET_STD  = [0.229, 0.224, 0.225]
 # ── Auto-scale for CPU ─────────────────────────────────────────────────────────
 if DEVICE == "cpu":
     BATCH_SIZE = 8
-    NUM_EPOCHS = 2
+    NUM_EPOCHS = 24
+
+
