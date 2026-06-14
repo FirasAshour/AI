@@ -53,6 +53,7 @@ def fit(train_df, val_df, test_df, num_classes):
 
     best_val_acc = 0.0
     best_path = os.path.join(config.OUTPUT_DIR, "best_model.pth")
+    os.makedirs(config.OUTPUT_DIR, exist_ok=True)
     history = []
 
     # ---- Stage 1: train head only ----
