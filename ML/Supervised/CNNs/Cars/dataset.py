@@ -1,5 +1,4 @@
 # dataset.py
-import os
 import cv2
 import numpy as np
 import pandas as pd
@@ -40,28 +39,15 @@ def build_dataloaders(train_df, val_df, test_df):
     test_ds  = CarDataset(test_df,  transforms=get_eval_transforms())
 
     train_loader = DataLoader(
-        train_ds,
-        batch_size=config.BATCH_SIZE,
-        shuffle=True,
-        num_workers=config.NUM_WORKERS,
-        pin_memory=config.PIN_MEMORY,
-        drop_last=True,
+        train_ds, batch_size=config.BATCH_SIZE, shuffle=True,
+        num_workers=config.NUM_WORKERS, pin_memory=config.PIN_MEMORY, drop_last=True,
     )
     val_loader = DataLoader(
-        val_ds,
-        batch_size=config.BATCH_SIZE,
-        shuffle=False,
-        num_workers=config.NUM_WORKERS,
-        pin_memory=config.PIN_MEMORY,
-        drop_last=False,
+        val_ds, batch_size=config.BATCH_SIZE, shuffle=False,
+        num_workers=config.NUM_WORKERS, pin_memory=config.PIN_MEMORY, drop_last=False,
     )
     test_loader = DataLoader(
-        test_ds,
-        batch_size=config.BATCH_SIZE,
-        shuffle=False,
-        num_workers=config.NUM_WORKERS,
-        pin_memory=config.PIN_MEMORY,
-        drop_last=False,
+        test_ds, batch_size=config.BATCH_SIZE, shuffle=False,
+        num_workers=config.NUM_WORKERS, pin_memory=config.PIN_MEMORY, drop_last=False,
     )
-
     return train_loader, val_loader, test_loader

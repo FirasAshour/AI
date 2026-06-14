@@ -37,6 +37,11 @@ IMAGENET_STD  = [0.229, 0.224, 0.225]
 NUM_WORKERS = 0      # 0 for local Windows/Jupyter; bump to 2 on Colab
 PIN_MEMORY  = True   # ignored on CPU, speeds transfer on GPU
 
+# config.py additions for Step 5
+HEAD_EPOCHS = 3            # stage 1: head-only, keep low for local smoke-testing
+FINETUNE_EPOCHS = 10       # stage 2: full-network fine-tune
+FINETUNE_LR_FACTOR = 0.1   # stage 2 LR = LR * this (e.g. 1e-3 -> 1e-4)
+
 # ── Auto-scale for CPU ─────────────────────────────────────────────────────────
 if DEVICE == "cpu":
     BATCH_SIZE = 8
